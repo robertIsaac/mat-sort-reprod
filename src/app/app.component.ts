@@ -71,6 +71,7 @@ export class AppComponent implements AfterViewInit {
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
+    this.dataSource.sort?.sort({id: 'name', start: 'desc', disableClear: false})
 
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
